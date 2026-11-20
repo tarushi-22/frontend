@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Patrick+Hand&display=swap');
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background: #8eaf9e;
+  color: #183d32;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+  background: #b9e1e9;
+  text-align: center;
+  padding: 18px;
+}
+
+h1 {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 42px;
+  color: #174d40;
+  margin: 0;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+main {
+  padding: 35px 24px;
+  min-height: calc(100vh - 80px);
+  background: #8eaf9e;
+}
+
+.game-layout {
+  width: 100%;
+  max-width: 1450px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 24px;
+  align-items: start;
+}
+
+/* =========================
+   GAME IMAGE
+========================= */
+
+#game-container {
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  background: #fff9e9;
+  border-radius: 24px;
+  box-shadow: 0 8px 25px rgba(25, 60, 45, 0.16);
+}
+
+#game-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  cursor: crosshair;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.game-sidebar {
+  background: #fff9e9;
+  border-radius: 22px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 8px 20px rgba(25, 60, 45, 0.12);
+  min-width: 0;
+  width: 100%;
+}
+
+/* =========================
+   TIMER
+========================= */
+
+.timer {
+  font-size: 30px;
+  font-weight: 800;
+  color: #214d3e;
+  letter-spacing: 2px;
+  background: #e5eddf;
+  padding: 10px 28px;
+  border-radius: 16px;
+}
+
+/* =========================
+   START / RESTART BUTTON
+========================= */
+
+#start-button {
+  width: 85%;
+  border: none;
+  border-radius: 30px;
+  padding: 13px 20px;
+  background: #215b46;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#start-button:hover {
+  background: #153e30;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(21, 62, 48, 0.18);
+}
+
+#start-button:active {
+  transform: scale(0.97);
+}
+
+/* =========================
+   SECONDARY BUTTONS
+========================= */
+
+.secondary-button {
+  width: 85%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 14px;
+  background-color: #e4ebdf;
+  color: #205c49;
+  font-size: 15px;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.secondary-button:hover {
+  background-color: #d2dfd0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(32, 92, 73, 0.12);
+}
+
+.secondary-button:active {
+  transform: scale(0.97);
+}
+
+/* Leaderboard button */
+
+.leaderboard-button {
+  margin: 2px 0;
+}
+
+/* Pause / Resume button */
+
+.pause-button {
+  background-color: #205c49;
+  color: #fffaf0;
+}
+
+.pause-button:hover {
+  background-color: #164b3b;
+}
+
+/* =========================
+   PLAYER NAME INPUT
+========================= */
+
+.player-name-input {
+  width: 85%;
+  padding: 12px 14px;
+  margin: 2px 0;
+  border: 1.5px solid #d8dfd0;
+  border-radius: 12px;
+  outline: none;
+  background-color: #fffdf6;
+  color: #244f41;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.player-name-input:focus {
+  border-color: #47836b;
+  box-shadow: 0 0 0 3px rgba(71, 131, 107, 0.15);
+}
+
+.player-name-input::placeholder {
+  color: #9a9f94;
+}
+
+.player-name-input:disabled {
+  background-color: #f0ecdf;
+  color: #777;
+  cursor: not-allowed;
+}
+
+/* Name validation error */
+
+.error-message {
+  color: #c0392b;
+  font-size: 13px;
+  font-weight: 700;
+  margin: -6px 0 0;
+  text-align: center;
+}
+
+/* =========================
+   CHARACTERS SECTION
+========================= */
+
+.find-section {
+  width: 100%;
+  text-align: center;
+}
+
+.find-section h3 {
+  font-size: 15px;
+  font-weight: 800;
+  margin: 8px 0 18px;
+  color: #214d3e;
+}
+
+/* Character list */
+
+#characters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.character-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 10px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.character-card:hover {
+  background: #f0ead9;
+  transform: translateY(-2px);
+}
+
+.character-avatar {
+  width: 65px;
+  height: 65px;
+  border: 3px solid #a6b9a6;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.character-card span {
+  font-size: 14px;
+  font-weight: 800;
+  color: #244c40;
+}
+
+/* Selected character */
+
+.character-card.selected {
+  background: #f8e29a;
+  outline: 2px solid #d5b34e;
+}
+
+.character-card.selected .character-avatar {
+  border-color: #d5b34e;
+}
+
+/* Found character */
+
+.character-card.found {
+  background: #d9ead9;
+  opacity: 0.65;
+  cursor: default;
+}
+
+.character-card.found .character-avatar {
+  border-color: #477c5c;
+}
+
+.character-card.found span {
+  text-decoration: line-through;
+  color: #477c5c;
+}
+
+/* =========================
+   LEADERBOARD
+========================= */
+
+.leaderboard {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  min-width: 0;
+  margin: 10px 0;
+  padding: 18px;
+  background: #ffffff;
+  border-radius: 16px;
+  color: #205c49;
+  box-shadow: 0 4px 12px rgba(32, 92, 73, 0.08);
+}
+
+.leaderboard h2 {
+  text-align: center;
+  margin: 0 0 8px;
+  color: #205c49;
+  font-size: 22px;
+}
+
+.leaderboard > p {
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+  margin: 0 0 16px;
+}
+
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 10px;
+  background: #f1eddf;
+  border-radius: 12px;
+  width: 100%;
+  min-width: 0;
+}
+
+.rank {
+  width: 30px;
+  flex-shrink: 0;
+  font-weight: 800;
+}
+
+.player-name {
+  flex: 1;
+  min-width: 0;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.player-time {
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* Leaderboard scrollbar */
+
+.leaderboard-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.leaderboard-list::-webkit-scrollbar-thumb {
+  background: #c5d4c5;
+  border-radius: 10px;
+}
+
+/* =========================
+   COMPLETION SCREEN
+========================= */
+
+.completion-screen {
+  text-align: center;
+  width: 90%;
+  max-width: 550px;
+  margin: 80px auto;
+  padding: 40px 25px;
+  background: #fffdf6;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.completion-screen h1 {
+  color: #27834c;
+}
+
+.completion-screen h2 {
+  color: #214d3e;
+}
+
+.final-time {
+  margin: 30px 0;
+  padding: 20px;
+  background: #f0f7f1;
+  border-radius: 15px;
+}
+
+.final-time h1 {
+  font-size: 48px;
+}
+
+.completion-screen button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #27834c;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.completion-screen button:hover {
+  background: #1b6539;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVE: TABLETS
+========================= */
+
+@media (max-width: 1000px) {
+  .game-layout {
+    grid-template-columns: minmax(0, 1fr) 230px;
+    gap: 16px;
+  }
+
+  main {
+    padding: 24px 16px;
+  }
+
+  .game-sidebar {
+    padding: 20px 12px;
+  }
+}
+
+/* =========================
+   RESPONSIVE: MOBILE
+========================= */
+
+@media (max-width: 750px) {
+  .game-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .game-sidebar {
+    width: 100%;
+  }
+
+  #characters {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .character-card {
+    width: 90px;
+  }
+
+  header {
+    padding: 14px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  main {
+    padding: 18px 12px;
+  }
+
+  .completion-screen {
+    margin: 35px auto;
+    padding: 28px 18px;
+  }
+
+  .final-time h1 {
+    font-size: 40px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+  .game-sidebar {
+    padding: 18px 10px;
+  }
+
+  .timer {
+    font-size: 26px;
+  }
+
+  .secondary-button,
+  #start-button,
+  .player-name-input {
+    width: 95%;
+  }
+
+  .leaderboard {
+    padding: 12px;
+  }
+
+  .leaderboard-row {
+    padding: 10px 8px;
+    gap: 6px;
+  }
+}
